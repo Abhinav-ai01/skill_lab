@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interactive Animation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* your existing styles unchanged */
+    /* ... (same as you posted) ... */
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Welcome to the Interactive World</h1>
+    <p>Enjoy the animation and beauty of falling flowers 🌸</p>
+    <form action="/greet" method="POST">
+      <input type="text" name="name" placeholder="Enter your name" required style="padding: 10px; margin-bottom: 10px; border-radius: 6px; border: 1px solid #ccc;">
+      <br>
+      <button class="btn" type="submit">Get Started</button>
+    </form>
+  </div>
+
+  <script>
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.style.left = Math.random() * window.innerWidth + 'px';
+      flower.style.animationDuration = 3 + Math.random() * 5 + 's';
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 8000);
+    }
+    setInterval(createFlower, 300);
+  </script>
+</body>
+</html>
